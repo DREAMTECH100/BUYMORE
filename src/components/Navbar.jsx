@@ -42,7 +42,8 @@ export default function Navbar() {
             : "bg-transparent py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex items-center justify-between">
+          
           {/* LOGO */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -52,7 +53,7 @@ export default function Navbar() {
               B
             </div>
 
-            <h1 className="text-2xl font-black tracking-tight">
+            <h1 className="text-xl sm:text-2xl font-black tracking-tight">
               BUY<span className="text-red-600">MORE</span>
             </h1>
           </motion.div>
@@ -68,12 +69,12 @@ export default function Navbar() {
               >
                 {link}
 
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-red-600 transition-all duration-300 hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-red-600 hover:w-full transition-all duration-300"></span>
               </motion.a>
             ))}
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* DESKTOP RIGHT SIDE */}
           <div className="hidden lg:flex items-center gap-5">
             <motion.div
               whileHover={{ scale: 1.08 }}
@@ -102,12 +103,36 @@ export default function Navbar() {
             </motion.button>
           </div>
 
-          {/* MOBILE ICON */}
-          <div
-            onClick={() => setOpen(!open)}
-            className="lg:hidden text-3xl cursor-pointer"
-          >
-            {open ? <FiX /> : <FiMenu />}
+          {/* MOBILE ACTIONS */}
+          <div className="flex lg:hidden items-center gap-2">
+
+            {/* Search */}
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer hover:bg-red-50 transition"
+            >
+              <FiSearch className="text-lg text-gray-700" />
+            </motion.div>
+
+            {/* Cart */}
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              className="relative w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer hover:bg-red-50 transition"
+            >
+              <FiShoppingCart className="text-lg text-gray-700" />
+
+              <div className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                2
+              </div>
+            </motion.div>
+
+            {/* Menu */}
+            <div
+              onClick={() => setOpen(!open)}
+              className="text-3xl cursor-pointer ml-1"
+            >
+              {open ? <FiX /> : <FiMenu />}
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -115,43 +140,56 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 w-[80%] h-screen bg-white z-[100] shadow-2xl lg:hidden"
-          >
-            <div className="flex items-center justify-between p-6 border-b">
-              <h1 className="text-2xl font-black">
-                BUY<span className="text-red-600">MORE</span>
-              </h1>
+          <>
+            {/* BACKDROP */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/40 z-[90] lg:hidden"
+              onClick={() => setOpen(false)}
+            />
 
-              <FiX
-                className="text-3xl cursor-pointer"
-                onClick={() => setOpen(false)}
-              />
-            </div>
+            {/* SIDEBAR */}
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.4 }}
+              className="fixed top-0 right-0 w-[80%] sm:w-[70%] h-screen bg-white z-[100] shadow-2xl lg:hidden"
+            >
+              <div className="flex items-center justify-between p-6 border-b">
+                <h1 className="text-2xl font-black">
+                  BUY<span className="text-red-600">MORE</span>
+                </h1>
 
-            <div className="flex flex-col p-8 gap-8">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-2xl font-semibold text-gray-800 hover:text-red-600 transition"
-                >
-                  {link}
-                </motion.a>
-              ))}
+                <FiX
+                  className="text-3xl cursor-pointer"
+                  onClick={() => setOpen(false)}
+                />
+              </div>
 
-              <button className="mt-6 bg-red-600 text-white py-4 rounded-full font-semibold text-lg shadow-lg">
-                Start Shopping
-              </button>
-            </div>
-          </motion.div>
+              <div className="flex flex-col p-8 gap-8">
+                {navLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href="#"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="text-2xl font-semibold text-gray-800 hover:text-red-600 transition"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link}
+                  </motion.a>
+                ))}
+
+                <button className="mt-6 bg-red-600 hover:bg-red-700 transition text-white py-4 rounded-full font-semibold text-lg shadow-lg">
+                  Start Shopping
+                </button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
