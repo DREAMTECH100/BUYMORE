@@ -148,7 +148,7 @@ export default function App() {
                 </h1>
 
                 <p className="mt-8 text-xl text-gray-400 leading-relaxed">
-                  Buymore’s digital logistics ecosystem enables customers across
+                  TEMPLATE’s digital logistics ecosystem enables customers across
                   Lagos to receive groceries and essentials quickly, efficiently
                   and reliably.
                 </p>
@@ -250,7 +250,7 @@ export default function App() {
               </h1>
 
               <p className="mt-10 text-xl text-gray-400 leading-relaxed max-w-4xl">
-                Buymore Supermarket represents the next generation of retail
+                TEMPLATE Supermarket represents the next generation of retail
                 commerce in Lagos — blending physical retail excellence with a
                 premium digital shopping experience designed for speed,
                 convenience and scalability.
@@ -282,7 +282,7 @@ export default function App() {
               </h1>
 
               <p className="mt-8 text-xl text-red-100 max-w-3xl mx-auto">
-                A premium ecommerce ecosystem crafted to elevate Buymore into a
+                A premium ecommerce ecosystem crafted to elevate TEMPLATE into a
                 dominant digital retail brand across Nigeria.
               </p>
 
@@ -494,7 +494,7 @@ export default function App() {
                   </h2>
 
                   <p className="mt-6 text-lg text-red-100 leading-relaxed">
-                    Designed for busy lifestyles, Buymore’s digital shopping
+                    Designed for busy lifestyles, TEMPLATE’s digital shopping
                     experience brings groceries, essentials and convenience
                     directly to customers faster than ever before.
                   </p>
@@ -533,7 +533,7 @@ export default function App() {
 
                 <p className="mt-6 text-gray-400 text-xl max-w-3xl mx-auto">
                   A premium digital commerce ecosystem designed to transform
-                  Buymore into a modern retail powerhouse.
+                  TEMPLATE into a modern retail powerhouse.
                 </p>
 
                 <button
