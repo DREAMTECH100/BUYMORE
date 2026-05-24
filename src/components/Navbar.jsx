@@ -54,7 +54,7 @@ export default function Navbar() {
             </div>
 
             <h1 className="text-xl sm:text-2xl font-black tracking-tight">
-              BUY<span className="text-red-600">MORE</span>
+              TEMP<span className="text-red-600">LATE</span>
             </h1>
           </motion.div>
 
@@ -160,7 +160,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between p-6 border-b">
                 <h1 className="text-2xl font-black">
-                  BUY<span className="text-red-600">MORE</span>
+                  TEMP<span className="text-red-600">LATE</span>
                 </h1>
 
                 <FiX

@@ -8,7 +8,7 @@ export default function Footer() {
 
         <div>
           <h3 className="text-xl tracking-[0.3em] mb-6">
-            BUYMORE
+            TEMPLATE
           </h3>
           <p className="text-gray-400 text-sm">
             Luxury fragrance house redefining modern elegance and bold identity.
@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-gray-500 text-xs mt-16">
-        © 2026 Buymore. All rights reserved.
+        © 2026 Template. All rights reserved.
       </div>
 
     </footer>
